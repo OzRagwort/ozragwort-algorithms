@@ -11,9 +11,6 @@ public class q2558 {
         a = sc.nextInt();
         b = sc.nextInt();
 
-        if(0 < a && 0 < b && a < 10 && b < 10)
-            System.out.println(a + b);
-        else
-            System.out.println("error");
+        System.out.println(a + b);
     }
 }

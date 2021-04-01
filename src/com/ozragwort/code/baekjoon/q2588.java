@@ -5,15 +5,19 @@ import java.util.Scanner;
 public class q2588 {
     public void solution() {
         Scanner sc = new Scanner(System.in);
-
-        int a, b;
-
+        int a, b, c, d, e, f;
         a = sc.nextInt();
         b = sc.nextInt();
 
-        if(0 < a && 0 < b && a < 10 && b < 10)
-            System.out.println(a + b);
-        else
-            System.out.println("error");
+        c = a*(b%10);
+        b /= 10;
+        d = a*(b%10);
+        b /= 10;
+        e = a*(b%10);
+        f = c + d*10 + e * 100;
+        System.out.println(c);
+        System.out.println(d);
+        System.out.println(e);
+        System.out.println(f);
     }
 }
