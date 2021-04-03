@@ -9,9 +9,15 @@ public class q1330 {
         a = sc.nextInt();
         b = sc.nextInt();
 
-        if ((a >= -10000 && a <= 10000) && (b >= -10000 && b <= 10000)) {
-            String ret = a > b ? ">" : (a < b ? "<" : "==");
-            System.out.print(ret);
+        if (a > b) {
+            System.out.println(">");
+        } else if (a < b) {
+            System.out.println("<");
+        } else {
+            System.out.println("==");
         }
+//        삼항 연산자
+//        String ret = a > b ? ">" : (a < b ? "<" : "==");
+//        System.out.print(ret);
     }
 }
