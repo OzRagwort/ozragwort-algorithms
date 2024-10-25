@@ -1,0 +1,66 @@
+package com.ozragwort.code.baekjoon;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.StringTokenizer;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class q1744 {
+    public void solution() {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+        int N = Integer.parseInt(br.readLine());
+        List<Integer> positives = new ArrayList<>();
+        List<Integer> negatives = new ArrayList<>();
+        Integer positiveRemainder = 0;
+        Integer negativeRemainder = 0;
+        Boolean hasZero = false;
+        int result = 0;
+        
+        for(int i = 0 ; i < N ; i++) {
+            Integer number = Integer.parseInt(br.readLine());
+            if (number == 1) {
+                positiveRemainder += number;
+            } else if (number > 0) {
+                positives.add(number);
+            } else if (number < 0) {
+                negatives.add(number);
+            } else {
+                hasZero ^= true;
+            }
+        }
+        
+        Collections.sort(positives);
+        Collections.sort(negatives);
+        
+        if (positives.size() % 2 == 1) {
+            positiveRemainder += positives.remove(0);
+        }
+        if (negatives.size() % 2 == 1) {
+            negativeRemainder += negatives.remove(negatives.size() - 1);
+        }
+        if (hasZero == true) {
+            negativeRemainder = 0;
+        }
+        
+        for (int i = 0 ; i < positives.size() ; i+=2) {
+            result += positives.get(i) * positives.get(i + 1);
+        }
+        for (int i = 0 ; i < negatives.size() ; i+=2) {
+            result += negatives.get(i) * negatives.get(i + 1);
+        }
+        result += positiveRemainder + negativeRemainder;
+        
+        bw.write(String.valueOf(result));
+
+        bw.flush();
+        bw.close();
+        br.close();
+    }
+}
