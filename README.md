@@ -2,7 +2,7 @@
 
 [![ozragwort's Solved.ac profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=ragwort)](https://solved.ac/ragwort/)
 
-"하루에 한번이라도 코드를 작성하자"라는 생각에서 1일 1알고리즘 문제를 풀고있습니다. 
+열심히 공부하자!
 
 ## 공부하는 곳
 
